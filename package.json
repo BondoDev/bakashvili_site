@@ -1,0 +1,14 @@
+{
+  "name": "bakashvili_site",
+  "version": "1.0.0",
+  "description": "Winery information site",
+  "main": "script.js",
+  "scripts": {
+    "compile-sass": "sass --watch sass/main.scss styles/styles.css"
+  },
+  "author": "bondo_asanidze",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.89.2"
+  }
+}

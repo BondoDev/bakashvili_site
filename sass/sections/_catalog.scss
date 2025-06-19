@@ -1,0 +1,107 @@
+.section__wines {
+  background-color: #f5ebda;
+  padding: 6rem 0;
+}
+
+.wines {
+  &__header {
+    width: 80%;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin: 0 auto;
+    border-bottom: 2px solid #af6900;
+
+    h2 {
+      color: #623d2a;
+      font-size: 3rem;
+      font-style: italic;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      color: #af6900;
+      font-size: 1.6rem;
+      font-family: "Sriracha", cursive;
+    }
+  }
+  &__catalog {
+    padding: 0 14rem;
+    margin-top: 5rem;
+    display: grid;
+    justify-content: center;
+    row-gap: 5rem;
+    column-gap: 2rem;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 34rem);
+    flex-wrap: wrap;
+
+    &--item {
+      display: grid;
+      grid-template-rows: 0.7fr 1.6fr 0.5fr;
+      grid-template-columns: 1fr 2fr;
+      max-height: 22rem;
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        img {
+          transform: translateY(-20px);
+        }
+      }
+
+      img {
+        grid-row: 1/-1;
+        grid-column: 1/2;
+        height: 100%;
+        margin: 0 auto;
+        z-index: 2;
+        transition: 0.3s;
+      }
+
+      &-description {
+        grid-row: 2/3;
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 2fr 2fr 1.5fr;
+        background-color: rgba(175, 105, 0, 0.2);
+        z-index: 1;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem 0;
+
+        h4 {
+          color: #482817;
+          font-size: 2rem;
+          text-transform: uppercase;
+          align-self: center;
+        }
+
+        p {
+          color: #af6900;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          align-self: flex-end;
+        }
+
+        div {
+          align-self: center;
+          font-weight: 600;
+          font-size: 1.6rem;
+          color: #482817;
+          font-family: "Sriracha", cursive;
+          width: 50%;
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #af6900;
+        }
+
+        h4,
+        p,
+        div {
+          grid-column: 2/3;
+        }
+      }
+    }
+  }
+}

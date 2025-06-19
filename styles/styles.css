@@ -1,0 +1,789 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.body__container {
+  max-width: 160rem;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 8px 0px 10px -6px rgba(0, 0, 0, 0.5), -8px 0px 10px -6px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  .body__container {
+    max-width: 100%;
+  }
+  body {
+    width: 140rem;
+    margin: 0 auto;
+  }
+}
+.navbar {
+  padding: 3rem 6rem 1.2rem 6rem;
+  display: grid;
+  grid-template-columns: auto 1fr 4fr;
+  border-bottom: 1px solid #af6900;
+}
+.navbar__logo {
+  color: rgb(122, 50, 50);
+  font-size: 2.4rem;
+  font-family: "Courgette", cursive;
+  font-size: 3rem;
+  display: grid;
+  grid-template-columns: auto 0.6rem auto;
+  justify-items: center;
+  align-items: center;
+  /* Vendor prefixes for justify-items and align-items */
+  -webkit-justify-items: center;
+  -ms-justify-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+}
+.navbar__logo > :nth-child(2) {
+  grid-column: 3/4;
+}
+.navbar__menu {
+  grid-column: 3/4;
+}
+.navbar__list {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, auto) 0.5fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 3rem;
+  list-style: none;
+  /* Vendor prefixes for justify-items and align-items */
+  -webkit-justify-items: center;
+  -ms-justify-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+}
+.navbar__item {
+  border-bottom: 2px solid #f5ebda;
+  transition: 0.4s;
+}
+.navbar__item:hover {
+  border-color: #623d2a;
+}
+.navbar__item a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #623d2a;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.language {
+  grid-column: 8/9;
+  border: 1px solid black;
+  padding: 1rem 2rem;
+  background-color: #fff;
+}
+
+.header__container {
+  background-color: #f5ebda;
+  background-image: url(../../images//header_background_image.png);
+  background-size: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 3rem;
+}
+
+.header {
+  margin-top: 3rem;
+  padding: 0 6rem;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.1fr 1fr 0.2fr;
+  grid-template-rows: 7rem 42rem 8rem;
+}
+.header__description {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+.header__description h1 {
+  color: #623d2a;
+  font-size: 4rem;
+  font-style: italic;
+  text-transform: uppercase;
+  padding: 3rem 0 2rem 0;
+}
+.header__description h3 {
+  color: #af6900;
+  font-size: 1.7rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+}
+.header__description p {
+  color: #482817;
+  font-size: 1.8rem;
+  font-family: "Sriracha", cursive;
+  line-height: 1.2;
+  padding-bottom: 6rem;
+}
+.header__description div {
+  color: #482817;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem 0;
+  margin: 0 10rem 0 10rem;
+  border: 1.5px solid #af6900;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  cursor: pointer;
+  align-self: center;
+}
+.header__image {
+  grid-row: 1/-1;
+  grid-column: 4/5;
+  width: 0px;
+}
+.header__image img {
+  max-height: 100%;
+}
+
+footer {
+  background-color: #f5ebda;
+  padding: 4rem 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+.footer__header {
+  color: #623d2a;
+  font-size: 1.7rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #af6900;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.footer__list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.footer__list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  color: #af6900;
+  cursor: pointer;
+}
+.footer__list li img {
+  fill: #af6900;
+}
+
+.section__history {
+  background-color: #f7f3f3;
+  padding: 2rem 0;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 3rem;
+}
+.history__description {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.history__description h2 {
+  color: #623d2a;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-style: italic;
+  text-transform: uppercase;
+  order: 2;
+}
+.history__description h3 {
+  color: #af6900;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  order: 1;
+}
+.history__description p {
+  color: #482817;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-family: "Sriracha", cursive;
+  line-height: 1.6;
+  order: 3;
+}
+.history__description button {
+  width: 100%;
+  max-width: 200px;
+  margin: 1rem 0 0;
+  border: none;
+  background-color: #af6900;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  order: 4;
+}
+.history__description button:hover, .history__description button:active {
+  background-color: rgba(175, 105, 0, 0.85);
+}
+.history__image {
+  order: 1;
+}
+.history__image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablet and Desktop Styles */
+@media (min-width: 768px) {
+  .section__history {
+    padding: 4rem 0;
+  }
+  .history {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    padding: 0 4rem;
+  }
+  .history__description {
+    order: 2;
+    flex: 1;
+  }
+  .history__image {
+    order: 1;
+    flex: 1;
+  }
+  .history__image img {
+    max-width: 100%;
+  }
+}
+/* Large Desktop Styles */
+@media (min-width: 1024px) {
+  .history {
+    gap: 6rem;
+    padding: 0 6rem;
+  }
+}
+.section__wines {
+  background-color: #f5ebda;
+  padding: 6rem 0;
+}
+
+.wines__header {
+  width: 80%;
+  text-align: center;
+  padding-bottom: 1rem;
+  margin: 0 auto;
+  border-bottom: 2px solid #af6900;
+}
+.wines__header h2 {
+  color: #623d2a;
+  font-size: 3rem;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.wines__header h3 {
+  color: #af6900;
+  font-size: 1.6rem;
+  font-family: "Sriracha", cursive;
+}
+.wines__catalog {
+  padding: 0 14rem;
+  margin-top: 5rem;
+  display: grid;
+  justify-content: center;
+  row-gap: 5rem;
+  column-gap: 2rem;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 34rem);
+  flex-wrap: wrap;
+}
+.wines__catalog--item {
+  display: grid;
+  grid-template-rows: 0.7fr 1.6fr 0.5fr;
+  grid-template-columns: 1fr 2fr;
+  max-height: 22rem;
+  cursor: pointer;
+}
+.wines__catalog--item:hover img, .wines__catalog--item:active img {
+  transform: translateY(-20px);
+}
+.wines__catalog--item img {
+  grid-row: 1/-1;
+  grid-column: 1/2;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 2;
+  transition: 0.3s;
+}
+.wines__catalog--item-description {
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 2fr 2fr 1.5fr;
+  background-color: rgba(175, 105, 0, 0.2);
+  z-index: 1;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem 0;
+}
+.wines__catalog--item-description h4 {
+  color: #482817;
+  font-size: 2rem;
+  text-transform: uppercase;
+  align-self: center;
+}
+.wines__catalog--item-description p {
+  color: #af6900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+.wines__catalog--item-description div {
+  align-self: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #482817;
+  font-family: "Sriracha", cursive;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #af6900;
+}
+.wines__catalog--item-description h4,
+.wines__catalog--item-description p,
+.wines__catalog--item-description div {
+  grid-column: 2/3;
+}
+
+/*.section__winemaking {
+  background-color: rgb(247, 243, 243);
+  padding: 4rem 0;
+}
+
+.winemaking {
+  padding: 0 8rem;
+  &__header {
+    h2 {
+      color: #623d2a;
+      font-size: 3rem;
+      font-style: italic;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      color: #af6900;
+      font-size: 1.6rem;
+      font-family: "Sriracha", cursive;
+    }
+  }
+
+  &__description {
+    margin: 4rem 0 4rem 0;
+    display: grid;
+    grid-template-rows: 30rem 30rem;
+    row-gap: 3rem;
+
+    &--1 {
+      display: flex;
+      column-gap: 3rem;
+      width: 124rem;
+
+      &-text {
+        font-size: 1.8rem;
+        color: #623d2a;
+      }
+
+      &-image {
+        img {
+          height: 100%;
+          width: 45rem;
+          border-radius: 5px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+
+    &--2 {
+      display: flex;
+      column-gap: 3rem;
+      width: 124rem;
+
+      &-text {
+        font-size: 1.8rem;
+        color: #623d2a;
+      }
+
+      &-image {
+        img {
+          height: 100%;
+          width: 45rem;
+          border-radius: 5px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      button {
+        width: 20%;
+        margin: 0 auto;
+        border: none;
+        background-color: #af6900;
+        color: #fff;
+        font-size: 1.6rem;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        padding: 1rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover,
+        &:active {
+          background-color: rgba(175, 105, 0, 0.85);
+        }
+      }
+    }
+  }
+}
+
+.text_and_button_continer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+*/
+.section__winemaking {
+  background-color: rgb(247, 243, 243);
+  padding: 2rem 0;
+}
+
+.winemaking {
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.winemaking__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.winemaking__header h2 {
+  color: #623d2a;
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+  font-style: italic;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.winemaking__header h3 {
+  color: #af6900;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-family: "Sriracha", cursive;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.winemaking__description {
+  margin: 3rem 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 3rem;
+}
+.winemaking__description--1, .winemaking__description--2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+.winemaking__description--1-text, .winemaking__description--2-text {
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  color: #623d2a;
+  line-height: 1.6;
+}
+.winemaking__description--1-image img, .winemaking__description--2-image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  display: block;
+}
+.winemaking__description--2 button {
+  width: 100%;
+  max-width: 200px;
+  margin: 2rem auto 0;
+  border: none;
+  background-color: #af6900;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.winemaking__description--2 button:hover, .winemaking__description--2 button:active {
+  background-color: rgba(175, 105, 0, 0.85);
+}
+
+.text_and_button_continer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) {
+  .winemaking {
+    padding: 0 4rem;
+  }
+  .winemaking__description--1, .winemaking__description--2 {
+    flex-direction: row;
+    align-items: center;
+  }
+  .winemaking__description--1-text, .winemaking__description--2-text {
+    flex: 1;
+  }
+  .winemaking__description--1-image, .winemaking__description--2-image {
+    flex: 1;
+  }
+  .winemaking__description--1-image img, .winemaking__description--2-image img {
+    max-width: 100%;
+  }
+  .winemaking__description--1 {
+    flex-direction: row-reverse; /* Image on right for first section */
+  }
+}
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+  .winemaking {
+    padding: 0 6rem;
+  }
+  .winemaking__description--1, .winemaking__description--2 {
+    gap: 3rem;
+  }
+}
+.section__contact {
+  background-color: rgb(247, 243, 243);
+  padding: 5rem 0;
+  padding-bottom: 10rem;
+}
+
+.contact {
+  display: grid;
+  grid-template-rows: 20rem 24rem 20rem;
+  grid-template-columns: 0.2fr 0.6fr 0.2fr;
+  justify-items: center;
+}
+.contact__image {
+  grid-row: 1/3;
+  grid-column: 1/-1;
+  z-index: 1;
+  width: 90%;
+}
+.contact__image img {
+  height: 100%;
+  width: 100%;
+}
+.contact__description {
+  background-color: rgba(242, 220, 185, 0.92);
+  border-radius: 1rem;
+  width: 100%;
+  grid-row: 2/4;
+  grid-column: 2/3;
+  z-index: 2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 3rem 0;
+}
+.contact__description--header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.contact__description--header h2 {
+  color: #623d2a;
+  font-size: 3rem;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.contact__description--header h3 {
+  color: #af6900;
+  font-size: 1.6rem;
+  font-family: "Sriracha", cursive;
+}
+.contact__description--form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+}
+.contact__description--form .input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+.contact__description--form .input__continer {
+  width: 70%;
+  border-bottom: 2px solid #af6900;
+}
+.contact__description--form .input__continer input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 1rem 1rem;
+  background-color: transparent;
+}
+.contact__description--form .input__continer input::placeholder {
+  font-size: 1.6rem;
+}
+.contact__description--form .textarea {
+  border: 2px solid #af6900;
+  width: 70%;
+  height: 12rem;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.contact__description--form .textarea textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 2rem 1rem;
+}
+.contact__description--form .textarea textarea::placeholder {
+  font-size: 1.4rem;
+}
+.contact__description--form label {
+  color: #482817;
+  font-size: 1.8rem;
+  font-family: "Sriracha", cursive;
+  line-height: 1.2;
+}
+.contact__description--form .submit {
+  width: 20%;
+  margin: 0 auto;
+  border: none;
+  background-color: #af6900;
+  color: #fff;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.contact__description--form .submit:hover, .contact__description--form .submit:active {
+  background-color: rgba(175, 105, 0, 0.85);
+}
+
+@media (max-width: 1024px) {
+  .contact {
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+  }
+  .contact__image {
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+  }
+  .contact__image img {
+    width: 100%;
+    height: auto;
+  }
+  .contact__description {
+    grid-row: 2;
+    grid-column: 1;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .contact__description--form .input,
+  .contact__description--form .textarea {
+    width: 90%;
+  }
+  .contact__description--form .input__continer,
+  .contact__description--form .textarea__continer {
+    width: 100%;
+  }
+  .contact__description--form .submit {
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .contact__description {
+    padding: 2rem 1rem;
+  }
+  .contact__description--header h2 {
+    font-size: 2.2rem;
+  }
+  .contact__description--header h3 {
+    font-size: 1.3rem;
+  }
+  .contact__description--form {
+    row-gap: 1.5rem;
+  }
+  .contact__description--form label {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .contact__description--form .submit {
+    width: 70%;
+    font-size: 1.4rem;
+  }
+  .contact__description--form .textarea {
+    height: 10rem;
+  }
+  .contact__description--form .textarea textarea::placeholder {
+    font-size: 1.2rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

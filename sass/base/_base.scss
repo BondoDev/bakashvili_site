@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.body__container {
+  max-width: 160rem;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 8px 0px 10px -6px rgba(0, 0, 0, 0.5),
+    -8px 0px 10px -6px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+  .body__container {
+    max-width: 100%;
+  }
+
+  body {
+    width: 140rem;
+    margin: 0 auto;
+  }
+}
+
+//body__container {
+//   max-width: 100%;
+//   margin: 0 auto;
+//   font-family: "Roboto", sans-serif;
+//   box-shadow: 8px 0px 10px -6px rgba(0, 0, 0, 0.5),
+//     -8px 0px 10px -6px rgba(0, 0, 0, 0.5);
+// }

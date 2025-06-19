@@ -1,0 +1,237 @@
+/*.section__winemaking {
+  background-color: rgb(247, 243, 243);
+  padding: 4rem 0;
+}
+
+.winemaking {
+  padding: 0 8rem;
+  &__header {
+    h2 {
+      color: #623d2a;
+      font-size: 3rem;
+      font-style: italic;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      color: #af6900;
+      font-size: 1.6rem;
+      font-family: "Sriracha", cursive;
+    }
+  }
+
+  &__description {
+    margin: 4rem 0 4rem 0;
+    display: grid;
+    grid-template-rows: 30rem 30rem;
+    row-gap: 3rem;
+
+    &--1 {
+      display: flex;
+      column-gap: 3rem;
+      width: 124rem;
+
+      &-text {
+        font-size: 1.8rem;
+        color: #623d2a;
+      }
+
+      &-image {
+        img {
+          height: 100%;
+          width: 45rem;
+          border-radius: 5px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+
+    &--2 {
+      display: flex;
+      column-gap: 3rem;
+      width: 124rem;
+
+      &-text {
+        font-size: 1.8rem;
+        color: #623d2a;
+      }
+
+      &-image {
+        img {
+          height: 100%;
+          width: 45rem;
+          border-radius: 5px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      button {
+        width: 20%;
+        margin: 0 auto;
+        border: none;
+        background-color: #af6900;
+        color: #fff;
+        font-size: 1.6rem;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        padding: 1rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover,
+        &:active {
+          background-color: rgba(175, 105, 0, 0.85);
+        }
+      }
+    }
+  }
+}
+
+.text_and_button_continer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+*/
+
+.section__winemaking {
+  background-color: rgb(247, 243, 243);
+  padding: 2rem 0;
+}
+
+.winemaking {
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      color: #623d2a;
+      font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      color: #af6900;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      font-family: "Sriracha", cursive;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+
+  &__description {
+    margin: 3rem 0;
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 3rem;
+
+    &--1,
+    &--2 {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+
+      &-text {
+        font-size: clamp(1.4rem, 2vw, 1.8rem);
+        color: #623d2a;
+        line-height: 1.6;
+      }
+
+      &-image {
+        img {
+          width: 100%;
+          max-width: 600px;
+          height: auto;
+          border-radius: 5px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          margin: 0 auto;
+          display: block;
+        }
+      }
+    }
+
+    &--2 {
+      button {
+        width: 100%;
+        max-width: 200px;
+        margin: 2rem auto 0;
+        border: none;
+        background-color: #af6900;
+        color: #fff;
+        font-size: 1.2rem;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        padding: 1rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover,
+        &:active {
+          background-color: rgba(175, 105, 0, 0.85);
+        }
+      }
+    }
+  }
+}
+
+.text_and_button_continer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) {
+  .winemaking {
+    padding: 0 4rem;
+
+    &__description {
+      &--1,
+      &--2 {
+        flex-direction: row;
+        align-items: center;
+
+        &-text {
+          flex: 1;
+        }
+
+        &-image {
+          flex: 1;
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+
+      &--1 {
+        flex-direction: row-reverse; /* Image on right for first section */
+      }
+    }
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+  .winemaking {
+    padding: 0 6rem;
+
+    &__description {
+      &--1,
+      &--2 {
+        gap: 3rem;
+      }
+    }
+  }
+}
