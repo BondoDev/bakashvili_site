@@ -17,6 +17,7 @@
           <div class="navbar__logo">
             <span>Bakashvili</span><span>Wine</span>
           </div>
+          <div class="navbar__hamburger">&#9776;</div>
           <nav class="navbar__menu">
             <ul class="navbar__list">
               <li class="navbar__item">
@@ -39,6 +40,19 @@
               </li>
             </ul>
           </nav>
+
+          <div class="navbar__popup" id="mobileMenu">
+            <div class="navbar__close">&times;</div>
+            <ul class="navbar__popup-list">
+              <!-- same menu items duplicated for mobile -->
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Wines</a></li>
+              <li><a href="#">Winemaking</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">English</a></li>
+            </ul>
+          </div>
         </div>
         <header class="header">
           <div class="header__description">
@@ -231,7 +245,7 @@
           </div>
         </section>
         <footer>
-         <div class="footer">
+          <div class="footer">
             <div class="footer__header">Contact Us</div>
             <ul class="footer__list">
               <li>
