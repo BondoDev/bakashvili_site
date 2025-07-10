@@ -1,7 +1,7 @@
 .header__container {
   background-color: #f5ebda;
-  background-image: url(../../images//header_background_image.png);
-  background-size: 100%;
+  background-image: url(../../images/header_background_image.png);
+  background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
   padding-bottom: 3rem;
@@ -49,7 +49,7 @@
       text-transform: uppercase;
       font-weight: 500;
       padding: 1rem 0;
-      margin: 0 10rem 0 10rem;
+      margin: 0 10rem;
       border: 1.5px solid #af6900;
       border-left: none;
       border-right: none;
@@ -62,10 +62,76 @@
   &__image {
     grid-row: 1/-1;
     grid-column: 4/5;
-    width: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     img {
-      max-height: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 1024px) {
+    padding: 0 3rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    &__description {
+      grid-column: 1/2;
+      grid-row: auto;
+      h1 {
+        font-size: 3rem;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        letter-spacing: 0.5rem;
+      }
+
+      p,
+      div {
+        font-size: 1.4rem;
+        padding: 1rem 0;
+        margin: 0 3rem;
+      }
+    }
+
+    &__image {
+      grid-column: 1/2;
+      grid-row: auto;
+      margin-top: 2rem;
+      img {
+        max-width: 80%;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 1.5rem;
+
+    &__description {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        letter-spacing: 0.3rem;
+      }
+
+      p,
+      div {
+        font-size: 1.2rem;
+        margin: 0 1rem;
+      }
+    }
+
+    &__image {
+      img {
+        max-width: 100%;
+      }
     }
   }
 }
