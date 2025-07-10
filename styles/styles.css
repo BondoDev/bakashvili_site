@@ -157,8 +157,8 @@ html {
 }
 .header__container {
   background-color: #f5ebda;
-  background-image: url(../../images//header_background_image.png);
-  background-size: 100%;
+  background-image: url(../../images/header_background_image.png);
+  background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
   padding-bottom: 3rem;
@@ -203,7 +203,7 @@ html {
   text-transform: uppercase;
   font-weight: 500;
   padding: 1rem 0;
-  margin: 0 10rem 0 10rem;
+  margin: 0 10rem;
   border: 1.5px solid #af6900;
   border-left: none;
   border-right: none;
@@ -214,10 +214,65 @@ html {
 .header__image {
   grid-row: 1/-1;
   grid-column: 4/5;
-  width: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header__image img {
-  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 3rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .header__description {
+    grid-column: 1/2;
+    grid-row: auto;
+  }
+  .header__description h1 {
+    font-size: 3rem;
+  }
+  .header__description h3 {
+    font-size: 1.4rem;
+    letter-spacing: 0.5rem;
+  }
+  .header__description p,
+  .header__description div {
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    margin: 0 3rem;
+  }
+  .header__image {
+    grid-column: 1/2;
+    grid-row: auto;
+    margin-top: 2rem;
+  }
+  .header__image img {
+    max-width: 80%;
+  }
+}
+@media (max-width: 600px) {
+  .header {
+    padding: 0 1.5rem;
+  }
+  .header__description h1 {
+    font-size: 2.2rem;
+  }
+  .header__description h3 {
+    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
+  }
+  .header__description p,
+  .header__description div {
+    font-size: 1.2rem;
+    margin: 0 1rem;
+  }
+  .header__image img {
+    max-width: 100%;
+  }
 }
 
 footer {
@@ -448,9 +503,7 @@ footer {
   justify-content: center;
   row-gap: 5rem;
   column-gap: 2rem;
-  grid-template-rows: auto;
   grid-template-columns: repeat(3, 34rem);
-  flex-wrap: wrap;
 }
 .wines__catalog--item {
   display: grid;
@@ -509,6 +562,74 @@ footer {
 .wines__catalog--item-description p,
 .wines__catalog--item-description div {
   grid-column: 2/3;
+}
+@media (max-width: 1024px) {
+  .wines .wines__catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 2rem;
+    gap: 3rem;
+  }
+  .wines .wines__catalog--item {
+    width: 280px;
+    max-width: 90vw;
+  }
+  .wines .wines__header h2 {
+    font-size: 2.4rem;
+  }
+  .wines .wines__header h3 {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 800px) {
+  .wines .wines__catalog {
+    padding: 0 2rem;
+    grid-template-columns: 1fr;
+    row-gap: 4rem;
+  }
+  .wines .wines__catalog--item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: none;
+    text-align: center;
+  }
+  .wines .wines__catalog--item img {
+    width: 100%;
+    max-width: 60px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .wines .wines__catalog--item-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(175, 105, 0, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .wines .wines__catalog--item-description h4 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .wines .wines__catalog--item-description p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #af6900;
+    text-transform: uppercase;
+  }
+  .wines .wines__catalog--item-description div {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    font-size: 1.4rem;
+    font-family: "Sriracha", cursive;
+    border-bottom: 1px solid #af6900;
+    padding-bottom: 0.5rem;
+  }
 }
 
 /*.section__winemaking {
