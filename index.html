@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Sriracha&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
   </head>
   <body>
     <div class="body__container">
@@ -21,19 +21,19 @@
           <nav class="navbar__menu">
             <ul class="navbar__list">
               <li class="navbar__item">
-                <a href="" class="navbar__link">Home</a>
+                <a href="#home" class="navbar__link">Home</a>
               </li>
               <li class="navbar__item">
-                <a href="" class="navbar__link">About</a>
+                <a href="#history" class="navbar__link">About</a>
               </li>
               <li class="navbar__item">
-                <a href="" class="navbar__link">Wines</a>
+                <a href="#wines" class="navbar__link">Wines</a>
               </li>
               <li class="navbar__item">
-                <a href="" class="navbar__link">Winemaking</a>
+                <a href="#winemaking" class="navbar__link">Winemaking</a>
               </li>
               <li class="navbar__item">
-                <a href="" class="navbar__link">Contact</a>
+                <a href="#contact" class="navbar__link">Contact</a>
               </li>
               <li class="navbar__item language">
                 <a href="" class="navbar__link">English</a>
@@ -45,16 +45,16 @@
             <div class="navbar__close">&times;</div>
             <ul class="navbar__popup-list">
               <!-- same menu items duplicated for mobile -->
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Wines</a></li>
-              <li><a href="#">Winemaking</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">English</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#history">About</a></li>
+              <li><a href="#wines">Wines</a></li>
+              <li><a href="#winemaking">Winemaking</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a>English</a></li>
             </ul>
           </div>
         </div>
-        <header class="header">
+        <header id="home" class="header">
           <div class="header__description">
             <h3>Winemaking Tradition</h3>
             <h1>
@@ -73,7 +73,7 @@
         </header>
       </div>
       <main>
-        <section class="section section__history">
+        <section id="history" class="section section__history">
           <div class="history">
             <div class="history__description">
               <h3>Winemaking Tradition</h3>
@@ -99,7 +99,7 @@
             </div>
           </div>
         </section>
-        <!--<section class="section section__wines">
+        <section id="wines" class="section section__wines">
           <div class="wines">
             <div class="wines__header">
               <h2>Our Best Spirit</h2>
@@ -137,8 +137,8 @@
               </div>
             </div>
           </div>
-        </section>-->
-        <section class="section section__winemaking">
+        </section>
+        <section id="winemaking" class="section section__winemaking">
           <div class="winemaking">
             <div class="winemaking__header">
               <h2>Our Winemaking Process</h2>
@@ -204,10 +204,7 @@
             </div>
           </div>
         </section>
-        <section class="section section__discover">
-          <div class="discover"></div>
-        </section>
-        <section class="section section__contact">
+        <section id="contact" class="section section__contact">
           <div class="contact">
             <div class="contact__image">
               <img src="../images/contact-image.png" alt="Contact image" />
@@ -281,6 +278,6 @@
         </footer>
       </main>
     </div>
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>
