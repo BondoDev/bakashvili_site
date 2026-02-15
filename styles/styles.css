@@ -581,30 +581,43 @@ footer {
 }
 .wines__catalog--item-description h4 {
   color: #482817;
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   align-self: center;
 }
 .wines__catalog--item-description p {
   color: #af6900;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
-  align-self: flex-end;
-}
-.wines__catalog--item-description div {
   align-self: center;
+}
+.wines__catalog--item-meta {
+  align-self: center;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.wines__catalog--item-volume {
   font-weight: 600;
   font-size: 1.6rem;
   color: #482817;
   font-family: "Sriracha", cursive;
-  width: 50%;
+  width: 55%;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #af6900;
 }
+.wines__catalog--item-price {
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: #7a1f1f;
+  font-family: "Sriracha", cursive;
+  white-space: nowrap;
+}
 .wines__catalog--item-description h4,
 .wines__catalog--item-description p,
-.wines__catalog--item-description div {
+.wines__catalog--item-meta {
   grid-column: 2/3;
 }
 @media (max-width: 1024px) {
@@ -656,23 +669,36 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   .wines .wines__catalog--item-description h4 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
   .wines .wines__catalog--item-description p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
     color: #af6900;
     text-transform: uppercase;
   }
-  .wines .wines__catalog--item-description div {
+  .wines .wines__catalog--item-meta {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    align-items: flex-end;
+    width: 80%;
+  }
+  .wines .wines__catalog--item-volume {
     font-size: 1.4rem;
     font-family: "Sriracha", cursive;
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid #af6900;
     padding-bottom: 0.5rem;
+  }
+  .wines .wines__catalog--item-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #7a1f1f;
+    font-family: "Sriracha", cursive;
+    white-space: nowrap;
   }
 }
 
