@@ -522,6 +522,50 @@ footer {
   padding: 6rem 0;
 }
 
+.section__gallery-link {
+  background-color: #f8f1e4;
+  padding: 5rem 0;
+}
+
+.gallery-link {
+  width: min(900px, 85%);
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: linear-gradient(135deg, #af6900, #7a1f1f);
+  border-radius: 1.2rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 20px rgba(72, 40, 23, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.gallery-link h2 {
+  color: #fff7eb;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.gallery-link p {
+  color: #fff1d6;
+  font-size: 1.5rem;
+  font-family: "Sriracha", cursive;
+}
+.gallery-link:hover, .gallery-link:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 26px rgba(72, 40, 23, 0.28);
+}
+@media (max-width: 800px) {
+  .gallery-link {
+    padding: 2.3rem 1.2rem;
+  }
+  .gallery-link h2 {
+    font-size: 2.2rem;
+  }
+  .gallery-link p {
+    font-size: 1.2rem;
+  }
+}
+
 .wines__header {
   width: 80%;
   text-align: center;
@@ -1138,3 +1182,99 @@ footer {
 }
 
 /*# sourceMappingURL=styles.css.map */
+
+.gallery-header {
+  background-image: none;
+  padding-bottom: 0;
+}
+
+.gallery-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f7f0e2 0%, #f5ebda 100%);
+  padding: 5rem 2rem;
+}
+
+.gallery-page__header {
+  width: min(1100px, 100%);
+  margin: 0 auto 2.4rem;
+  text-align: center;
+}
+
+.gallery-page__header h1 {
+  color: #482817;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+.gallery-page__header p {
+  color: #7a1f1f;
+  font-size: 1.5rem;
+  font-family: "Sriracha", cursive;
+}
+
+.photo-gallery {
+  --gallery-gap: 1.6rem;
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  column-count: 4;
+  column-gap: var(--gallery-gap);
+}
+
+.gallery-item {
+  display: block;
+  margin: 0 0 var(--gallery-gap);
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #fff8ef;
+  box-shadow: 0 8px 20px rgba(72, 40, 23, 0.14);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-item:hover,
+.gallery-item:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(72, 40, 23, 0.2);
+}
+
+@media (max-width: 1200px) {
+  .photo-gallery {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 900px) {
+  .photo-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-gallery {
+    column-count: 1;
+  }
+}
+
+.gallery-page__back {
+  display: block;
+  width: fit-content;
+  margin: 2.8rem auto 0;
+  text-decoration: none;
+  color: #af6900;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.gallery-page__back:hover,
+.gallery-page__back:focus-visible {
+  text-decoration: underline;
+}
