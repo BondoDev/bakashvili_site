@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".navbar__hamburger");
   const popup = document.getElementById("mobileMenu");
   const closeBtn = document.querySelector(".navbar__close");
@@ -14,57 +14,65 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // ✅ Close with "X"
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
         popup.classList.remove("active");
       });
     }
   }
-});
 
-////////////// History popup //////////////
-document.getElementById("historyModal").style.display = "none";
+  const historyModal = document.getElementById("historyModal");
+  const historyOpenBtn = document.querySelector(".section__history button");
+  const historyCloseBtn = document.getElementById("closeHistoryModal");
 
-document
-  .querySelector(".section__history button")
-  .addEventListener("click", () => {
-    document.getElementById("historyModal").style.display = "flex";
-  });
+  if (historyModal && historyOpenBtn && historyCloseBtn) {
+    historyModal.style.display = "none";
 
-document.getElementById("closeHistoryModal").addEventListener("click", () => {
-  document.getElementById("historyModal").style.display = "none";
-});
+    historyOpenBtn.addEventListener("click", () => {
+      historyModal.style.display = "flex";
+    });
 
-document.getElementById("historyModal").addEventListener("click", (e) => {
-  if (e.target.id === "historyModal") {
-    e.currentTarget.style.display = "none";
+    historyCloseBtn.addEventListener("click", () => {
+      historyModal.style.display = "none";
+    });
+
+    historyModal.addEventListener("click", (e) => {
+      if (e.target === historyModal) {
+        historyModal.style.display = "none";
+      }
+    });
   }
-});
 
-////////////// Winemaking popup //////////////
+  const winemakingModal = document.getElementById("winemakingModal");
+  const winemakingHeaderBtn = document.getElementById("seeHowItMadeBtn");
+  const winemakingSectionBtn = document.querySelector(
+    ".winemaking .text_and_button_continer button"
+  );
+  const winemakingCloseBtn = document.getElementById("closeWinemakingModal");
 
-document.getElementById("seeHowItMadeBtn").addEventListener("click", () => {
-  document.getElementById("winemakingModal").style.display = "flex";
-});
+  if (winemakingModal) {
+    if (winemakingHeaderBtn) {
+      winemakingHeaderBtn.addEventListener("click", () => {
+        winemakingModal.style.display = "flex";
+      });
+    }
 
-// Show modal
-document
-  .querySelector(".winemaking .text_and_button_continer button")
-  .addEventListener("click", () => {
-    document.getElementById("winemakingModal").style.display = "flex";
-  });
+    if (winemakingSectionBtn) {
+      winemakingSectionBtn.addEventListener("click", () => {
+        winemakingModal.style.display = "flex";
+      });
+    }
 
-// Close modal
-document
-  .getElementById("closeWinemakingModal")
-  .addEventListener("click", () => {
-    document.getElementById("winemakingModal").style.display = "none";
-  });
+    if (winemakingCloseBtn) {
+      winemakingCloseBtn.addEventListener("click", () => {
+        winemakingModal.style.display = "none";
+      });
+    }
 
-// Close when clicking outside the content
-document.getElementById("winemakingModal").addEventListener("click", (e) => {
-  if (e.target.id === "winemakingModal") {
-    e.currentTarget.style.display = "none";
+    winemakingModal.addEventListener("click", (e) => {
+      if (e.target === winemakingModal) {
+        winemakingModal.style.display = "none";
+      }
+    });
   }
 });
