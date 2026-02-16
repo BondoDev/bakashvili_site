@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const galleryDir = "./images/gallery/";
   const imageExt = /\.(avif|bmp|gif|jpe?g|png|svg|webp)$/i;
+  const githubGalleryApi =
+    "https://api.github.com/repos/BondoDev/bakashvili_site/contents/images/gallery?ref=main";
 
   const formatCaption = (filename) => {
     const withoutExt = filename.replace(/\.[^.]+$/, "");
@@ -70,25 +72,53 @@ document.addEventListener("DOMContentLoaded", () => {
     return getTimestampFromName(url);
   };
 
+  const getImageUrlsFromDirectoryListing = async () => {
+    const response = await fetch(galleryDir, { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error(`Could not open ${galleryDir}`);
+    }
+
+    const directoryHtml = await response.text();
+    const parser = new DOMParser();
+    const directoryDoc = parser.parseFromString(directoryHtml, "text/html");
+    const baseUrl = new URL(galleryDir, window.location.href);
+
+    return [...directoryDoc.querySelectorAll("a")]
+      .map((link) => link.getAttribute("href") || "")
+      .map((href) => href.split("?")[0].split("#")[0])
+      .filter((href) => imageExt.test(href))
+      .map((href) => new URL(href, baseUrl).href)
+      .filter((url, index, all) => all.indexOf(url) === index);
+  };
+
+  const getImageUrlsFromGitHubApi = async () => {
+    const response = await fetch(githubGalleryApi, { cache: "no-store" });
+
+    if (!response.ok) {
+      throw new Error("Could not read gallery from GitHub API");
+    }
+
+    const entries = await response.json();
+    if (!Array.isArray(entries)) {
+      return [];
+    }
+
+    return entries
+      .filter((entry) => entry && entry.type === "file" && imageExt.test(entry.name || ""))
+      .map((entry) => entry.download_url || entry.html_url || "")
+      .filter(Boolean);
+  };
+
   const loadGallery = async () => {
     try {
-      const response = await fetch(galleryDir, { cache: "no-store" });
+      let imageUrls = [];
 
-      if (!response.ok) {
-        throw new Error(`Could not open ${galleryDir}`);
+      try {
+        imageUrls = await getImageUrlsFromDirectoryListing();
+      } catch (directoryError) {
+        imageUrls = await getImageUrlsFromGitHubApi();
       }
-
-      const directoryHtml = await response.text();
-      const parser = new DOMParser();
-      const directoryDoc = parser.parseFromString(directoryHtml, "text/html");
-      const baseUrl = new URL(galleryDir, window.location.href);
-
-      const imageUrls = [...directoryDoc.querySelectorAll("a")]
-        .map((link) => link.getAttribute("href") || "")
-        .map((href) => href.split("?")[0].split("#")[0])
-        .filter((href) => imageExt.test(href))
-        .map((href) => new URL(href, baseUrl).href)
-        .filter((url, index, all) => all.indexOf(url) === index);
 
       if (!imageUrls.length) {
         return;
