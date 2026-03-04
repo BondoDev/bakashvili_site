@@ -604,6 +604,7 @@ footer {
   transform: translateY(-20px);
 }
 .wines__catalog--item img {
+  position: relative;
   grid-row: 1/-1;
   grid-column: 1/2;
   height: 100%;

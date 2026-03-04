@@ -71,33 +71,48 @@
 
         h4 {
           color: #482817;
-          font-size: 2rem;
+          font-size: 1.8rem;
           text-transform: uppercase;
           align-self: center;
         }
 
         p {
           color: #af6900;
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           text-transform: uppercase;
-          align-self: flex-end;
+          align-self: center;
         }
 
-        div {
+        .wines__catalog--item-meta {
           align-self: center;
+          width: 80%;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+
+        .wines__catalog--item-volume {
           font-weight: 600;
           font-size: 1.6rem;
           color: #482817;
           font-family: "Sriracha", cursive;
-          width: 50%;
+          width: 55%;
           display: flex;
           justify-content: space-between;
           border-bottom: 1px solid #af6900;
         }
 
+        .wines__catalog--item-price {
+          font-weight: 700;
+          font-size: 1.7rem;
+          color: #7a1f1f;
+          font-family: "Sriracha", cursive;
+          white-space: nowrap;
+        }
+
         h4,
         p,
-        div {
+        .wines__catalog--item-meta {
           grid-column: 2/3;
         }
       }
@@ -161,27 +176,94 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
         h4 {
-          font-size: 1.6rem;
+          font-size: 1.5rem;
           margin-bottom: 0.5rem;
         }
 
         p {
-          font-size: 1.2rem;
+          font-size: 1rem;
           margin-bottom: 1rem;
           color: #af6900;
           text-transform: uppercase;
         }
 
-        div {
+        .wines__catalog--item-meta {
           display: flex;
           justify-content: space-between;
-          width: 60%;
+          align-items: flex-end;
+          width: 80%;
+        }
+
+        .wines__catalog--item-volume {
           font-size: 1.4rem;
           font-family: "Sriracha", cursive;
+          width: 65%;
+          display: flex;
+          justify-content: space-between;
           border-bottom: 1px solid #af6900;
           padding-bottom: 0.5rem;
         }
+
+        .wines__catalog--item-price {
+          font-size: 1.4rem;
+          font-weight: 700;
+          color: #7a1f1f;
+          font-family: "Sriracha", cursive;
+          white-space: nowrap;
+        }
       }
+    }
+
+  }
+}
+
+.section__gallery-link {
+  background-color: #f8f1e4;
+  padding: 5rem 0;
+}
+
+.gallery-link {
+  width: min(900px, 85%);
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: linear-gradient(135deg, #af6900, #7a1f1f);
+  border-radius: 1.2rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 20px rgba(72, 40, 23, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  h2 {
+    color: #fff7eb;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  p {
+    color: #fff1d6;
+    font-size: 1.5rem;
+    font-family: "Sriracha", cursive;
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 26px rgba(72, 40, 23, 0.28);
+  }
+}
+
+@media (max-width: 800px) {
+  .gallery-link {
+    padding: 2.3rem 1.2rem;
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
     }
   }
 }
